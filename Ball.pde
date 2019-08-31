@@ -8,7 +8,6 @@ class Ball {
   float g = random(0,255);
   float b = random(0,255);
   
-  
   float mag = 0;
   float eatTime; 
   
@@ -29,13 +28,11 @@ class Ball {
   int fed = 0;
   int count = 0;
   
-  
   float diacap;
   float sightcap;
   float magcap;
   
   float famid = random(0,1000);
-  
 
   Ball(){
     sight = random(50,200);
@@ -48,7 +45,6 @@ class Ball {
     vel.normalize();
     px = (sight/2) * cos(angle);
     py = (sight/2) * sin(angle);
-    
      
      sightcap = sight;
      diacap = sightcap * .30;
@@ -91,7 +87,6 @@ class Ball {
         point(loc.x+px,loc.y+py);
         strokeWeight(8);
       }    
-     
    }
   
    void update(){    
@@ -111,24 +106,14 @@ class Ball {
        if(mag >= magcap){
          mag = magcap;
        }
-       
-       
+
        rad = dia/2;
        px = (sight/2) * cos(angle);
        py = (sight/2) * sin(angle);
        angle = angle + .075;     
-       
-       
+
        vel.mult(mag); 
        vel.limit(mag);
-       loc.add(vel);   
-       
-       
+       loc.add(vel);      
    }
-
-   
-   
-  
-   
-   
 }
