@@ -36,9 +36,9 @@ class Ball {
 
   Ball(){
     sight = random(50,200);
-    dia = random(15,25);
+    dia = random(10,20);
     rad = dia/2;
-    loc = new PVector(1400/2, height/2);
+    loc = new PVector(((width/4)*3)/2, height/2);
     vel = new PVector(random(-4,4),random(-4,4));
     mag = vel.mag();
     eatTime = random(0,mag);
@@ -66,9 +66,9 @@ class Ball {
         
         noFill();
         stroke(ro,go,bo);
-        strokeWeight(12);
+        strokeWeight(6);
         ellipse(loc.x,loc.y,sight,sight);
-        strokeWeight(8);
+        strokeWeight(6);
         
       }
       
@@ -83,9 +83,9 @@ class Ball {
         noFill();
         stroke(ro,go,bo,230);
         ellipse(loc.x,loc.y,sight,sight);
-        strokeWeight(15);
+        strokeWeight(10);
         point(loc.x+px,loc.y+py);
-        strokeWeight(8);
+        strokeWeight(6);
       }    
    }
   
