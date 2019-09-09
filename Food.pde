@@ -6,12 +6,12 @@ class Food{
   int rad = dia/2;
   float side = random(0,100);
   
-  PVector loc = new PVector(random(0+dia,1400-28), random(0+dia, height-28));
+  PVector loc = new PVector(random(0+dia, width/4 *3 - dia), random(0+dia, height- dia));
   
   Food(){
    
-    while(dist(loc.x,loc.y,limitw/2, limith/2) <= 225){
-      loc = new PVector(random(0+28,1400-28), random(0+28, height-28));
+    while(dist(loc.x,loc.y,limitw/2, limith/2) <= 200){
+        loc = new PVector(random(0+dia, width/4 *3 - dia), random(0+dia, height- dia));
     }
     
   }
