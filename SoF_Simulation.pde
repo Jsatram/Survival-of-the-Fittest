@@ -5,6 +5,7 @@ ArrayList<Graph> fittest;      //Array List of colors of the fittest Ball in pop
 
 int limitw;                    //width limit
 int limith;                    //height limit
+int graphLimit;
 
 int pop = 100;                 //initialize population
 int amount = 45;               //initialize amount of food
@@ -19,7 +20,8 @@ int families = 0;              //initialize counter of number of families
 
 void setup(){
   size(2000,1200);
-  limitw = width - 600;
+  graphLimit = width /4;
+  limitw = width - graphLimit;
   limith = height;
   
   //surface.setResizable(true);
@@ -68,7 +70,7 @@ void draw(){
   rectMode(CORNER);
   noStroke();
   fill(0);
-  rect(limitw,0,600,height);
+  rect(limitw,0,graphLimit,height);
    
   
   if(count == 1500 || f.size() == 0){
@@ -94,7 +96,7 @@ void draw(){
     for(int i = 0; i < fittest.size(); i++ ){
       text("Fittest Color: " , limitw + 10, 140 + (i * 35)); 
       fill(fittest.get(i).r,fittest.get(i).g,fittest.get(i).b);
-      text("#####", limitw + 240, 140 + (i * 35));
+      text(b.get(0).famid, limitw + 240, 140 + (i * 35));
       fill(255);
       println(fittest.size());
     }
